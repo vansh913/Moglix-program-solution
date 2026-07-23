@@ -19,7 +19,7 @@ def longest_valid_parentheses(s):
           
   return max_len
 
-if __name__="__main__"
+if __name__ == "__main__":
     s = input().strip()
     print(longest_valid_parentheses(s))
           
