@@ -22,7 +22,15 @@ class TestLongestValidParentheses(unittest.TestCase):
     def test_valid_part_in_middle(self):
         #leading ')' with no match, then a valid part after it
         self.assertEqual(longest_valid_parentheses(")(()"), 2)
+    
+    def test_valid_multiple_chunks(self):
+        #two separate valid stretches broken by an unmatched ')'
+        self.assertEqual(longest_valid_parentheses("()(())"), 6)
+        self.assertEqual(longest_valid_parentheses("(()))(()())"), 6)
 
+    def test_nested_inside_unmatched(self):
+        #valid nested block sitting after some leading junk
+        self.assertEqual(longest_valid_parentheses(")()(((()))"), 6)
 
 if __name__ == "__main__":
     unittest.main()
